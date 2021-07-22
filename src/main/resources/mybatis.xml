@@ -25,5 +25,8 @@
     <mappers>
         <mapper resource="com/powernode/dao/StudentDao.xml"/>
         <!--<mapper resource="com/powernode/dao/StudentDao.xml"/>-->
+
+        <mapper resource="com/powernode/dao/DeptDao.xml"/>
     </mappers>
+
 </configuration>
