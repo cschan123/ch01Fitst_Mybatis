@@ -7,8 +7,6 @@
 2、mapper是跟标签，namespace 必须有值，唯一，推荐使用dao接口全称。作用参与sql语句的作用
 mapper 可以是用使用<insert><update><delete><select>-->
 
-
-
 <mapper namespace="com.powernode.dao.StudentDao">
 <!--    <select id="selectBlog" resultType="Blog">
     select * from Student where id = #{id}
@@ -23,6 +21,14 @@ mapper 可以是用使用<insert><update><delete><select>-->
     <select id="selectStudentList" resultType="com.powernode.domain.Student">
         select * from tbl_student;
     </select>
+
+
+    <!--/*传入Java对象，使用#{} 获取属性的值.执行此属性，对应的getXXX()
+    如#{id}，执行getId()*/
+       /* insert into tbl_student values(4,"jjP","80","2018-1-1",18)*/-->
+    <insert id="insertStudent">
+        insert into tbl_student values(#{id},#{name},#{score},#{birth},#{age})
+    </insert>
 
 
 </mapper>

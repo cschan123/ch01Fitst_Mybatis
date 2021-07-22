@@ -7,4 +7,8 @@ public interface StudentDao {
     Student selectStudentbyID(Integer id);
     //查询所有学生信息
     Student studentList();
+
+    //添加学生,返回值是影响数据库的行数
+    int insertStudent(Student student);
+
 }
