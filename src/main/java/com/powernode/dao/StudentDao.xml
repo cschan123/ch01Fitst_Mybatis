@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--上面为约束文件：定义和限制可以使用的属性和标签，以及标签的顺序
+2、mapper是跟标签，namespace 必须有值，唯一，推荐使用dao接口全称。作用参与sql语句的作用
+mapper 可以是用使用<insert><update><delete><select>-->
+
+
+
+<mapper namespace="com.powernode.dao.StudentDao">
+<!--    <select id="selectBlog" resultType="Blog">
+    select * from Student where id = #{id}
+  </select>-->
+
+
+    <!--查询一个学生,id推荐使用dao接口方法,resultType，执行sql语句返回给resultType中的对象-->
+    <select id="selectStudentByID" resultType="com.powernode.domain.Student">
+        select id,name,score,birth,age from tbl_student where id= #{id};
+    </select>
+    <!--查询所有学生信息-->
+    <select id="selectStudentList" resultType="com.powernode.domain.Student">
+        select * from tbl_student;
+    </select>
+
+
+</mapper>
